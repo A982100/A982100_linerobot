@@ -1,82 +1,42 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace A982100_linerobot.Controllers
 {
-    public class NpcController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class NpcController : ControllerBase
     {
-        // GET: NpcController
-        public ActionResult Index()
+        // GET: api/<NpcController>
+        [HttpGet]
+        public IEnumerable<string> Get()
         {
-            return View();
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: NpcController/Details/5
-        public ActionResult Details(int id)
+        // GET api/<NpcController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
         {
-            return View();
+            return "value";
         }
 
-        // GET: NpcController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: NpcController/Create
+        // POST api/<NpcController>
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public void Post([FromBody] string value)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
 
-        // GET: NpcController/Edit/5
-        public ActionResult Edit(int id)
+        // PUT api/<NpcController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
-            return View();
         }
 
-        // POST: NpcController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // DELETE api/<NpcController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: NpcController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: NpcController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }
