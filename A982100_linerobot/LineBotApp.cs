@@ -51,68 +51,68 @@ public class LineBotApp : WebhookApplication
                         case 0:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "愚者")
+                                new TextMessage("你抽到了愚者")
                                 
                             };
                             break;
                         case 1:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "魔術師")
+                                new TextMessage("你抽到了魔術師")
                             };
                             break;
                         case 2:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId +"女祭司")
+                                new TextMessage("你抽到了女祭司")
                             };
                             break;
                         case 3:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId +"皇后")
+                                new TextMessage("你抽到了皇后")
                             };
                             break;
                         case 4:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId +"皇帝")
+                                new TextMessage("你抽到了皇帝")
                             };
                             break;
                         case 5:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "戀人")
+                                new TextMessage("你抽到了戀人")
                             };
                             break;
                         case 6:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "戰車")
+                                new TextMessage("你抽到了戰車")
                             };
                             break;
                         case 7:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "力量")
+                                new TextMessage("你抽到了力量")
                             };
                             break;
                         case 8:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "隱者")
+                                new TextMessage("你抽到了隱者")
                             };
                             break;
                         case 9:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "命運之輪")
+                                new TextMessage("你抽到了命運之輪")
                             };
                             break;
                         case 10:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage(userId + "正義")
+                                new TextMessage("你抽到了正義")
                             };
                             break;
                     }
