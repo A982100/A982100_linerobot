@@ -1,6 +1,8 @@
 using System.Net.Mime;
 using Line.Messaging;
 using Line.Messaging.Webhooks;
+using NuGet.ContentModel;
+using System;
 
 namespace A982100_linerobot;
 
@@ -18,7 +20,6 @@ public class LineBotApp : WebhookApplication
     protected override async Task OnMessageAsync(MessageEvent ev)
     {
         var result = null as List<ISendMessage>;
-        ver text;
 
         switch (ev.Message)
         {
@@ -30,34 +31,101 @@ public class LineBotApp : WebhookApplication
                 //使用者Id
                 var userId = ev.Source.UserId;
                 //使用者輸入的文字
-                var Text = ((TextEventMessage)ev.Message).Text;
+                var text = ((TextEventMessage)ev.Message).Text;
 
-                if (PoolHasMsg(Text))
+                if (PoolHasMsg(text))
                 {
                     // 從記憶體池查詢資料
-                    string response = GetResponse(Text);
+                    string response = GetResponse(text);
                     result = new List<ISendMessage>
                     {
                         new TextMessage(response)
                     };
                 }
-                else
+                else if (text == "日簽")
                 {
-                    if (CheckFormat(Text))
+                    var rand = new Random();
+                    var randomNumber = rand.Next(10);
+                    switch (randomNumber)
                     {
-                        //將資料寫入記憶體池
-                        TeachDog(Text);
+                        case 0:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "愚者")
+                                
+                            };
+                            break;
+                        case 1:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "魔術師")
+                            };
+                            break;
+                        case 2:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId +"女祭司")
+                            };
+                            break;
+                        case 3:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId +"皇后")
+                            };
+                            break;
+                        case 4:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId +"皇帝")
+                            };
+                            break;
+                        case 5:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "戀人")
+                            };
+                            break;
+                        case 6:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "戰車")
+                            };
+                            break;
+                        case 7:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "力量")
+                            };
+                            break;
+                        case 8:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "隱者")
+                            };
+                            break;
+                        case 9:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "命運之輪")
+                            };
+                            break;
+                        case 10:
+                            result = new List<ISendMessage>
+                            {
+                                new TextMessage(userId + "正義")
+                            };
+                            break;
                     }
                 }
-
-                var outputText = Text;
-                
-                if (Text.Contains("嗨") && Text.Contains("你好"))
+                else
                 {
-                    Text = "你好";
+                    if (CheckFormat(text))
+                    {
+                        //將資料寫入記憶體池
+                        TeachDog(text);
+                    }
                 }
-
-
+                
                 /*
                 //回傳 hellow
                 result = new List<ISendMessage>
@@ -81,7 +149,7 @@ public class LineBotApp : WebhookApplication
     /// <returns></returns>
     private bool PoolHasMsg(string inputMsg)
     {
-        return false;
+        return _pool.ContainsKey(inputMsg);
     }
 
     
@@ -98,6 +166,7 @@ public class LineBotApp : WebhookApplication
     private bool CheckFormat(string inputMsg)
     {
         bool result = false;
+        
         try
         {
             string[] subs = inputMsg.Split(';');
@@ -145,9 +214,7 @@ public class LineBotApp : WebhookApplication
 }
 
 
-public class ver
-{
-}
+
 
 
 
