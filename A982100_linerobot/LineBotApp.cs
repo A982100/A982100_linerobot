@@ -51,68 +51,80 @@ public class LineBotApp : WebhookApplication
                         case 0:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了愚者")
+                                new TextMessage("你抽到了愚者"),
+                                new TextMessage("今天的你非常做自己，不會去在乎周圍的眼光，也非常享受過程，不在意任何事情的結果")
                                 
                             };
                             break;
                         case 1:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了魔術師")
+                                new TextMessage("你抽到了魔術師"),
+                                new TextMessage("今天的你注意力非常的好，創造力也極佳，也意味著今天的你有說謊的可能")
                             };
                             break;
                         case 2:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了女祭司")
+                                new TextMessage("你抽到了女祭司"),
+                                new TextMessage("今天的你非常懶散，很沒有行動力，女祭司也有著隱藏自己的意思")
                             };
                             break;
                         case 3:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了皇后")
+                                new TextMessage("你抽到了皇后"),
+                                new TextMessage("皇后有著豐饒的意思，也暗示了一些交際手腕，今天的你很願意去體驗享受生活")
                             };
                             break;
                         case 4:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了皇帝")
+                                new TextMessage("你抽到了皇帝"),
+                                new TextMessage("皇帝有著萬王之王的意思，今天的你非常清楚今天要做甚麼，會有強烈的掌控力")
                             };
                             break;
                         case 5:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了戀人")
+                                new TextMessage("你抽到了戀人"),
+                                new TextMessage("戀人有著著主動選擇的含意，今天的你可能會面臨著選擇的問題，請一定好好想想哪個選擇對你最好")
                             };
                             break;
                         case 6:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了戰車")
+                                new TextMessage("你抽到了戰車"),
+                                new TextMessage("戰車有失控的意味，也許表面看似穩定，但內部可能出現了隱患，請好好觀察並重視這件事情")
                             };
                             break;
                         case 7:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了力量")
+                                new TextMessage("你抽到了力量"),
+                                new TextMessage("今天的你可能受到來自外在的壓迫，這表示並不是自願，比如今天下雨你不得不帶把傘，這就是外在壓迫")
                             };
                             break;
                         case 8:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了隱者")
+                                new TextMessage("你抽到了隱者"),
+                                new TextMessage("你的能力很好，但生不逢時，所有條件都不允許你發揮你的能力，今天的你會因此感到孤獨")
                             };
                             break;
                         case 9:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了命運之輪")
+                                new TextMessage("你抽到了命運之輪"),
+                                new TextMessage("命運之輪有著利用規律的意思，我們在等待合適的時機做正確的事")
                             };
                             break;
                         case 10:
                             result = new List<ISendMessage>
                             {
-                                new TextMessage("你抽到了正義")
+                                new TextMessage("你抽到了正義"),
+                                new TextMessage("正義並不是像天秤那樣公平公正，而是凸顯出個人的正義，這種正義一定是對你有利的，所以是個人的正義")
+                                
                             };
                             break;
                     }
